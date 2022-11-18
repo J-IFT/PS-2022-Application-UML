@@ -4,7 +4,7 @@
 
 }
 #top{
-    height: 35px;
+    height: 50px;
     width: 100%;
     background: black;
    line-height: 35px;
@@ -24,7 +24,7 @@
     background:white;
     text-align: center;
     line-height: 65px;
-    font-size: 40px;
+    font-size: 50px;
     float: left;
 }
 #menu1{
@@ -32,21 +32,22 @@
     width: 60%;
     background:white;
     float: left;
-
 }
 #menu1 UL{
     list-style: none;
     padding-left: 200px;
     box-sizing: border-box;
-
+    font-size: 20px;
+    font-style: oblique;
 }
 
 .footer{
-    height: 20px;
+    height: 30px;
     width: 100%;
     background: black;
     color: white;
     text-align: center;
+    font-size: 18px;
 }
 
 /* Bordered form */
@@ -72,7 +73,9 @@ button {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 50%;
+  width: 20%;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 /* Add a hover effect for buttons */
@@ -103,6 +106,7 @@ img.avatar {
 .container {
   padding: 16px;
   text-align: center;
+  font-size: 23px;
 }
 
 /* The "Forgot password" text */
