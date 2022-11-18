@@ -40,8 +40,8 @@ Il est attendu un fichier de rapport contenant :
 
 ### 💻 Applications et langages utilisés :
 
-+ ...
-+ ...
++ PHP, HTML, CSS
++ Atom, MySQL
 
 
 
