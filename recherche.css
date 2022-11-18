@@ -1,7 +1,5 @@
 #background{
-    min-height: 1050px;
     width: 100%;
-
 }
 #top{
     height: 50px;
@@ -37,6 +35,7 @@
 #menu1 UL{
     list-style: none;
     padding-left: 300px;
+    padding-top: 20px;
     box-sizing: border-box;
     font-size: 20px;
 }
@@ -55,7 +54,7 @@
     background: black;
     color: white;
     text-align: center;
-    font-size: 18px;
+    font-size: 21px;
 }
 
 #myInput {
