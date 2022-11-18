@@ -1,3 +1,17 @@
+<?php
+include 'classes/Library.php';
+// Instancation library
+if(session_status() == 1){
+	$_SESSION['library'] = new Library();
+	echo 'lancement';
+}else{
+	echo'deja lancé';
+}
+// Connection 
+if(isset($_POST['uname']) && isset($_POST['psw'])){
+	$_SESSION['library']->login($_POST['uname'],$_POST['psw']);
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -21,7 +35,7 @@
                 </ul>
             </div>
         </div>
-        <form action="action_page.php" method="post">
+        <form action="" method="post">
           <div class="imgcontainer">
             <img src="user.png" alt="Avatar" class="avatar">
           </div>

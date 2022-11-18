@@ -1,5 +1,4 @@
 <?php 
-include 'DB.php';
 include 'Author.php';
 
 class Book {

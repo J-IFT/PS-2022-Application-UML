@@ -1,6 +1,4 @@
 <?php
-include 'DB.php';
-
 class Author {
 	public $name;
 	public $biography;

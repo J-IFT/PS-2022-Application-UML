@@ -4,7 +4,7 @@ class DB {
 
 	public static function connect() {
 		try{
-			self::$db = new mysqli("localhost", "root", "","woaff");
+			self::$db = new mysqli("localhost", "root", "","umlapp");
 		}catch (PDOException $e){   
 			echo $e->getMessage();
 		}
