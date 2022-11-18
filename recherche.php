@@ -16,7 +16,8 @@
             </div>
             <div id="menu1">
                 <ul>
-                  <a href="gestion.html"><li class="fa fa-folder"> Gestion | </li></a>
+                    <a href="gestiondeslivres.html"><li class="fa fa-folder"> Gestion des livres | </li></a>
+                    <a href="gestiondesutilisateurs.html"><li class="fa fa-folder"> Gestion des utilisateurs | </li></a>
                   <a href="#"><li class="fa fa-user"> Se déconnecter</li></a>
                 </ul>
             </div>
