@@ -16,8 +16,8 @@
             </div>
             <div id="menu1">
                 <ul>
-                    <a href="gestiondeslivres.html"><li class="fa fa-folder"> Gestion des livres | </li></a>
-                    <a href="gestiondesutilisateurs.html"><li class="fa fa-folder"> Gestion des utilisateurs | </li></a>
+                  <a href="gestiondeslivres.html"><li class="fa fa-folder"> Gestion des livres | </li></a>
+                  <a href="gestiondesutilisateurs.html"><li class="fa fa-folder"> Gestion des utilisateurs | </li></a>
                   <a href="#"><li class="fa fa-user"> Se déconnecter</li></a>
                 </ul>
             </div>
@@ -27,32 +27,48 @@
 
       <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Rechercher le nom du livre...">
 <br><br>
-      <table id="myTable">
-          <tr class="header">
-            <th style="width:60%;">Nom du livre</th>
-            <th style="width:40%;">Auteur</th>
-          </tr>
-        <tr>
-          <td>Harry Potter à l'école des sorciers</td>
-          <td>J. K. Rowling</td>
-        </tr>
-        <tr>
-          <td>Voyage au bout de la nuit</td>
-          <td>Louis-Ferdinand Céline</td>
-        </tr>
-        <tr>
-          <td>Cent ans de solitude</td>
-          <td>Gabriel García Márquez</td>
-        </tr>
-        <tr>
-          <td>Le seigneur des anneaux t.1 : la fraternité de l'anneau</td>
-          <td>J.R.R. Tolkien</td>
-        </tr>
-        <tr>
-          <td>L'étranger</td>
-          <td>Albert Camus</td>
-        </tr>
-    </table>
+<table id="myTable">
+    <tr class="header">
+      <th style="width:15%;">Nom du livre</th>
+      <th style="width:15%;">Auteur</th>
+      <th style="width:10%;">Sujet (Genre)</th>
+      <th style="width:25%;">Aperçu (Résumé)</th>
+      <th style="width:15%;">Éditeur</th>
+      <th style="width:10%;">Date de publication</th>
+      <th style="width:10%;">Langue</th>
+      <th style="width:10%;">ISBN</th>
+    </tr>
+  <tr>
+    <td>Le Petit Prince</td>
+    <td>Antoine de Saint-Exupéry</td>
+    <td>Conte, Jeunesse</td>
+    <td>Le narrateur, un pilote qui est tombé en panne d'essence dans le Sahara, fait la connaissance d’un prince extraordinaire venant d’une autre planète.</td>
+    <td>Reynal & Hitchcock</td>
+    <td>1943</td>
+    <td>Français</td>
+    <td>9782070612758</td>
+  </tr>
+  <tr>
+    <td>Harry Potter à l'école des sorciers</td>
+    <td>J. K. Rowling</td>
+    <td>Roman, Jeunesse, Fantastique</td>
+    <td>Harry Potter, orphelin élevé dans une famille qui ne l'aime pas, voit son existence bouleversée du jour au lendemain. La nuit de son onzième anniversaire, un géant vient le chercher pour l'emmener à Poudlard, une école de sorcellerie.</td>
+    <td>Gallimard Jeunesse</td>
+    <td>1997</td>
+    <td>Anglais</td>
+    <td>9782070612369</td>
+  </tr>
+  <tr>
+    <td>Les Misérables</td>
+    <td>Victor Hugo</td>
+    <td>Roman</td>
+    <td>Cosette et Marius sont 2 âmes disposées à s'aimer. Mais Jean Valjean veille, lui, l'ancien bagnard dont Cosette est devenue la seule raison de vivre.</td>
+    <td>Larousse</td>
+    <td>1862</td>
+    <td>Français</td>
+    <td>9782035834256</td>
+  </tr>
+</table>
 
 <br><br><br>
 <footer>
