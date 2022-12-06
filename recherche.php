@@ -28,15 +28,9 @@ echo '<br>v2:';var_dump(Library::getAccounts());
             </div>
             <div id="menu1">
                 <ul>
-<<<<<<< HEAD
                     <a href="gestiondeslivres.html"><li class="fa fa-folder"> Gestion des livres | </li></a>
                     <a href="gestiondesutilisateurs.html"><li class="fa fa-folder"> Gestion des utilisateurs | </li></a>
                   <a href="index.php?deconnexion=1"><li class="fa fa-user"> Se déconnecter</li></a>
-=======
-                  <a href="gestiondeslivres.html"><li class="fa fa-folder"> Gestion des livres | </li></a>
-                  <a href="gestiondesutilisateurs.html"><li class="fa fa-folder"> Gestion des utilisateurs | </li></a>
-                  <a href="#"><li class="fa fa-user"> Se déconnecter</li></a>
->>>>>>> b95ce75ae9dd4cd756b6b14eee59bf22d04070ba
                 </ul>
             </div>
         </div>
