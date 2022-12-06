@@ -1,13 +1,10 @@
 <?php
-include 'include_top.php';
+// echo'session: ';var_dump($_SESSION);echo'<br>';
+// echo'<br>session: ';var_dump($_SESSION);echo'<br>';
 // echo '<br> val: '.$a.'<br>';
-if(!isset($_SESSION['user_id'])){
-	header('Location: index.php');
-}
-echo '<br>global: ';var_dump($GLOBALS['a']);
-echo'<br>session: ';var_dump($_SESSION);echo'<br>';
-echo "v1: ";var_dump(Library::$accounts);
-echo '<br>v2:';var_dump(Library::getAccounts());
+// echo '<br>global: ';var_dump($GLOBALS['a']);
+// echo "v1: ";var_dump(Library::$accounts);
+// echo '<br>v2:';var_dump(Library::getAccounts());
 // echo'<br> Library::$accounts : ';var_dump($_SERVER['library']->accounts);echo'<br>';
 ?>
 <html lang="fr">
@@ -28,8 +25,8 @@ echo '<br>v2:';var_dump(Library::getAccounts());
             </div>
             <div id="menu1">
                 <ul>
-                    <a href="gestiondeslivres.html"><li class="fa fa-folder"> Gestion des livres | </li></a>
-                    <a href="gestiondesutilisateurs.html"><li class="fa fa-folder"> Gestion des utilisateurs | </li></a>
+                    <a href="index.php?page=gestiondeslivres"><li class="fa fa-folder"> Gestion des livres | </li></a>
+                    <a href="index.php?page=gestiondesutilisateurs"><li class="fa fa-folder"> Gestion des utilisateurs | </li></a>
                   <a href="index.php?deconnexion=1"><li class="fa fa-user"> Se déconnecter</li></a>
                 </ul>
             </div>
