@@ -1,16 +1,30 @@
 <?php
-include 'classes/Library.php';
-// Instancation library
-if(session_status() == 1){
-	$_SESSION['library'] = new Library();
-	echo 'lancement';
-}else{
-	echo'deja lancé';
+include 'include_top.php';
+echo "a = ".$a."<br>";
+$a = "nouvelle val";
+echo "a = ".$a."<br>";
+if(isset($_GET['deconnexion']) && $_GET['deconnexion']){
+	session_destroy();
 }
 // Connection 
+echo '<br>global: ';var_dump($GLOBALS['a']);
+$GLOBALS['a'] = 1;
+echo '<br>global: ';var_dump($GLOBALS['a']);
+// echo '<br> val: '.$a.'<br>';
+// echo'<br> Library::$accounts : ';var_dump($_ENV['library']->accounts);echo'<br>';
+// echo'<br> Library::$accounts : ';var_dump(Library::$accounts);echo'<br>';
 if(isset($_POST['uname']) && isset($_POST['psw'])){
-	$_SESSION['library']->login($_POST['uname'],$_POST['psw']);
+	// $_ENV['library']->login($_POST['uname'],$_POST['psw']);
+	Library::login($_POST['uname'],$_POST['psw']);
 }
+echo '<br>par fonction : ';var_dump(Library::getAccounts());echo'<br>';
+// echo'<br> Library::$accounts : ';var_dump($_ENV['library']->accounts);echo'<br>';
+// echo'<br> Library::$accounts : ';var_dump(Library::$accounts);echo'<br>';
+// verif si dejà connecté
+if(isset($_SESSION['user_id'])){
+	// header('Location: recherche.php');
+}
+echo'<br>session: ';var_dump($_SESSION);echo'<br>';
 ?>
 <!DOCTYPE html>
 <html lang="fr">

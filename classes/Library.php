@@ -1,37 +1,42 @@
 <?php
-include 'DB.php';
 include 'Catalog.php';
 include 'Account.php';
 
 class Library {
-	public $name;
-	public $address;
+	// global $test;
+	public $name = 'La Blibliotek';
+	public $address = '1 rue du prout, 38400, Saint-Martin D\'Hères';
 	public $catalog;
-	public $accounts = array();
+	public static $accounts = array();
 
-	function __construct(){
-		DB::connect();
-		$this->name = 'La Blibliotek';
-		$this->adresse = '1 rue du prout, 38400, Saint-Martin D\'Hères';
-		$this->catalog = new Catalog();
-		// $account_query = DB::query("
-		// 	SELECT number
-		// 	FROM account
-		// ");
-		// while($account = DB::fetch($account_query)){
-		// 	var_dump($account['number']);
-		// 	array_push($this->accounts, new Account($account['number']));
-		// }
-	}
-
-	function login($username,$pwd){
+	public static function login($username,$pwd){
 		$account = new Account($username,$pwd);
 		if($account->login()){
-			array_push($this->accounts, $account);
-			header('Location: recherche.php');
+			array_push(self::$accounts, $account);
+			$_SESSION['user_id'] = $account->number;
+			// var_dump(self::$accounts);
+			// var_dump(json_encode(self::$accounts));
 		}else{
-			echo 'login error';
+			echo '<br>[ERROR] - login error <br>';
 		}
+	}
 
+	// public static function update 
+	// public static function saveCache(){
+	// 	$user_cache = fopen("cache/users.json","w");
+	// 	fwrite($user_cache,json_encode(self::$accounts));
+	// 	fclose($user_cache);
+	// }
+
+	// public static function UpdateCache(){
+	// 	$json = file_get_contents("cache/users.json");
+	// 	var_dump(json_decode($json));
+	// 	foreach(json_decode($json) as $user){
+	// 		echo '<br>'.var_dump($user);
+	// 	}
+	// }
+
+	public static function getAccounts(){
+		return self::$accounts;
 	}
 }
