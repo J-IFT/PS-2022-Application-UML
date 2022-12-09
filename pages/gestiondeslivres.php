@@ -40,6 +40,10 @@
             <th style="width:10%;">Langue</th>
             <th style="width:10%;">ISBN</th>
           </tr>
+		<?php
+			Library::InitCatalogue();
+			Library::printCatalog();
+		?>
         <tr>
           <td>Le Petit Prince</td>
           <td>Antoine de Saint-Exupéry</td>

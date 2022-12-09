@@ -16,7 +16,7 @@ class Book {
 		$book_query = DB::query("
 			SELECT name,subject,overview,publisher,publicationDate,lang
 			FROM book
-			WHERE ISBN = ".DB::str($this->ISBN)."
+			WHERE ISBN = ".DB::str($isbn)."
 		");
 		$book = DB::fetch($book_query);
 		if($book){
