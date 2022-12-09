@@ -42,7 +42,7 @@ class Library {
 					<td>'.$bookItem->overview.'</td>
 					<td>'.$bookItem->publisher.'</td>
 					<td>'.$bookItem->publicationDate.'</td>
-					<td>'.$bookItem->lang.'</td>
+					<td>'.constant('LANG_'.$bookItem->lang).'</td>
 					<td>'.$bookItem->tag.'</td>
 					<td>
 						<button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
