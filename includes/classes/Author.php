@@ -9,7 +9,7 @@ class Author {
 		$author_query = DB::query("
 			SELECT biography, birthDate
 			FROM author
-			WHERE name = ".DB::str($name)."
+			WHERE name = '".DB::str($name)."'
 		");
 		$author = DB::fetch($author_query);
 		if($author){

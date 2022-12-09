@@ -29,13 +29,14 @@ class Book {
 			$this->lang 		   = $book['lang'];
 		}
 		$author_query = DB::query("
-			SELECT author_name
-			FROM table_liaison
-			WHERE ISBN = ".DB::str($this->ISBN)."
+			SELECT a.name
+			FROM author_book ab
+			JOIN author a ON a.id = ab.author_id
+			WHERE ab.book_id = ".DB::str($this->ISBN)."
 		");
-		while($author = DB::fetch($author_query)){
-			$auth = new Author($author['author_name']);
-			array_push($this->author, $auth);
+		if(DB::num_rows($author_query)){
+			$author = DB::fetch($author_query);
+			$this->author = new Author($author['name']);
 		}
 	}
 

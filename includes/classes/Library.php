@@ -36,20 +36,23 @@ class Library {
 		foreach(self::$catalog as $bookItem){
 			echo '
 				<tr>
-					<td>Le Petit Prince</td>
-					<td>Antoine de Saint-Exupéry</td>
-					<td>Conte, Jeunesse</td>
-					<td>Le narrateur, un pilote qui est tombé en panne d\'essence dans le Sahara, fait la connaissance d’un prince extraordinaire venant d’une autre planète.</td>
-					<td>Reynal & Hitchcock</td>
-					<td>1943</td>
-					<td>Français</td>
-					<td>9782070612758</td>
+					<td>'.$bookItem->title.'</td>
+					<td>'.$bookItem->author->name.'</td>
+					<td>'.$bookItem->subject.'</td>
+					<td>'.$bookItem->overview.'</td>
+					<td>'.$bookItem->publisher.'</td>
+					<td>'.$bookItem->publicationDate.'</td>
+					<td>'.$bookItem->lang.'</td>
+					<td>'.$bookItem->tag.'</td>
 					<td>
 						<button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
 						<button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
 					</td>
 				</tr>
 			';
+		}
+		if(is_null(self::$catalog)){
+			echo '<tr>Aucun livre</tr>';
 		}
 	}
 	// public static function update 

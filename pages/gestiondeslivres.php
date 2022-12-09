@@ -44,48 +44,6 @@
 			Library::InitCatalogue();
 			Library::printCatalog();
 		?>
-        <tr>
-          <td>Le Petit Prince</td>
-          <td>Antoine de Saint-Exupéry</td>
-          <td>Conte, Jeunesse</td>
-          <td>Le narrateur, un pilote qui est tombé en panne d'essence dans le Sahara, fait la connaissance d’un prince extraordinaire venant d’une autre planète.</td>
-          <td>Reynal & Hitchcock</td>
-          <td>1943</td>
-          <td>Français</td>
-          <td>9782070612758</td>
-          <td>
-            <button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
-            <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-          </td>
-        </tr>
-        <tr>
-          <td>Harry Potter à l'école des sorciers</td>
-          <td>J. K. Rowling</td>
-          <td>Roman, Jeunesse, Fantastique</td>
-          <td>Harry Potter, orphelin élevé dans une famille qui ne l'aime pas, voit son existence bouleversée du jour au lendemain. La nuit de son onzième anniversaire, un géant vient le chercher pour l'emmener à Poudlard, une école de sorcellerie.</td>
-          <td>Gallimard Jeunesse</td>
-          <td>1997</td>
-          <td>Anglais</td>
-          <td>9782070612369</td>
-          <td>
-            <button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
-            <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-          </td>
-        </tr>
-        <tr>
-          <td>Les Misérables</td>
-          <td>Victor Hugo</td>
-          <td>Roman</td>
-          <td>Cosette et Marius sont 2 âmes disposées à s'aimer. Mais Jean Valjean veille, lui, l'ancien bagnard dont Cosette est devenue la seule raison de vivre.</td>
-          <td>Larousse</td>
-          <td>1862</td>
-          <td>Français</td>
-          <td>9782035834256</td>
-          <td>
-            <button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
-            <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-          </td>
-        </tr>
       </table>
 
 <br><br><br>
