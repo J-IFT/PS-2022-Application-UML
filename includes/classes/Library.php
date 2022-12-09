@@ -44,6 +44,23 @@ class Library {
 	}
 	//! ---
 
+	public static function printAccounts(){
+		foreach(self::$accounts as $account){
+			echo '
+				<tr>
+					<td>'.$account->username.'</td>
+					<td></td>
+					<td></td>
+					<td>'.$account->pwd.'</td>
+					<td>
+					<button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
+					<button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+					</td>
+				</tr>
+			';
+		}
+	}
+
 	public static function printCatalog(){
 		foreach(self::$catalog as $bookItem){
 			echo '

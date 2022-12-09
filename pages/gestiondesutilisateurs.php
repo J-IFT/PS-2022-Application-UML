@@ -38,37 +38,8 @@
             </tr>
 			<?php
 				Library::InitAccounts();
+				Library::printAccounts();
 			?>
-          <tr>
-            <td>Magnolia</td>
-            <td>Gaillou</td>
-            <td>m.gaillou@gmail.com</td>
-            <td>JVEOIFOEFEOJFEJEFIOEF12</td>
-            <td>
-              <button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
-              <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-            </td>
-          </tr>
-          <tr>
-            <td>Melodie</td>
-            <td>Angélil</td>
-            <td>m.gaillou@gmail.com</td>
-            <td>JVEOIFOEFEOJFEJEFIOEF12</td>
-            <td>
-              <button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
-              <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-            </td>
-          </tr>
-          <tr>
-            <td>Beltane</td>
-            <td>Chalut</td>
-            <td>m.gaillou@gmail.com</td>
-            <td>JVEOIFOEFEOJFEJEFIOEF12</td>
-            <td>
-              <button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
-              <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-            </td>
-          </tr>
       </table>
 
 <br><br><br>
