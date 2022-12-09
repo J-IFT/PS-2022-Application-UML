@@ -9,10 +9,11 @@ class BookItem extends Book {
 	public $numberOfPages;
 	public $format;
 	public $borrowed;
+	public $lang;
 
 	function __construct($barcode, $rfid, $isbn = null){
 		$bookItem_query = DB::query("
-			SELECT * 
+			SELECT ISBN, title, numberOfPages, format, lang
 			FROM bookitem
 			WHERE barcode = ".DB::str($barcode)."
 				AND tag= ".DB::str($rfid)."
@@ -20,8 +21,12 @@ class BookItem extends Book {
 		if(DB::num_rows($bookItem_query)){
 			$bookItem = DB::fetch($bookItem_query);
 			parent::__construct($bookItem['ISBN']);
-			$this->barcode = $barcode;
-			$this->tag	   = $isbn;
+			$this->barcode 		 = $barcode;
+			$this->tag	   		 = $isbn;
+			$this->title   		 = $bookItem['title'];
+			$this->numberOfPages = $bookItem['numberOfPages'];
+			$this->format   	 = $bookItem['format'];
+			$this->lang   		 = $bookItem['lang'];
 		}
 	}
 }
