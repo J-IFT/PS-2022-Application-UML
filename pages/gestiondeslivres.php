@@ -27,7 +27,7 @@
         <br><br><br>
 
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Rechercher le nom du livre...">
-        <button type="button" class="btn btn-primary">Ajouter un livre</button>
+        <a class="btn btn-primary" href="ajouterunlivre.html"><li class="fa fa-book"> Ajouter un livre </li></a>
   <br><br>
       <table id="myTable">
           <tr class="header">

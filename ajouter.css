@@ -1,0 +1,80 @@
+#background{
+    width: 100%;
+}
+#top{
+    height: 50px;
+    width: 100%;
+    background: black;
+   line-height: 35px;
+   padding: 0px 20px 9px 100px;
+   box-sizing: border-box;
+    word-spacing:10px ;
+
+}
+#menu{
+    height: 65px;
+    width: 100%;
+    background:black;
+}
+#logo{
+    height: 65px;
+    width: 40%;
+    background:white;
+    text-align: center;
+    line-height: 65px;
+    font-size: 50px;
+    float: left;
+}
+#menu1{
+    height: 65px;
+    width: 60%;
+    background:white;
+    float: left;
+
+}
+#menu1 UL{
+    list-style: none;
+    padding-left: 300px;
+    padding-top: 20px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+#menu1 LI{
+    color: black;
+}
+
+#menu1 LI:hover{
+    color: pink;
+}
+
+.footer{
+    height: 30px;
+    width: 100%;
+    background: black;
+    color: white;
+    text-align: center;
+    font-size: 21px;
+}
+
+/* Bordered form */
+form {
+  border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 20px;
+  text-align: center;
+  font-size: 15px;
+}

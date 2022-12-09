@@ -27,7 +27,7 @@
         <br><br><br>
 
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Rechercher le prénom de l'utilisateur...">
-        <button type="button" class="btn btn-primary">Ajouter un utilisateur</button>
+        <a class="btn btn-primary" href="ajouterunutilisateur.html"><li class="fa fa-user"> Ajouter un utilisateur </li></a>
   <br><br>
         <table id="myTable">
             <tr class="header">
