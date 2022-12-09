@@ -7,7 +7,7 @@
     <title>Application de gestion d’une bibliothèque</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="includes/css/gestiondesutilisateurs.css" type="text/css">
+    <link rel="stylesheet" href="includes/css/gestion.css" type="text/css">
 </head>
 <body>
     <div id="background">
@@ -27,7 +27,7 @@
         <br><br><br>
 
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Rechercher le prénom de l'utilisateur...">
-        <button type="button" class="btn btn-primary">Ajouter un utilisateur</button>
+        <a class="btn btn-primary" href="ajouterunutilisateur.html"><li class="fa fa-user"> Ajouter un utilisateur </li></a>
   <br><br>
         <table id="myTable">
             <tr class="header">
