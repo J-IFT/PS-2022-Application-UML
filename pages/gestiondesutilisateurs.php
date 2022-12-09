@@ -36,6 +36,9 @@
               <th style="width:30%;">Adresse mail</th>
               <th style="width:20%;">Mot de passe</th>
             </tr>
+			<?php
+				Library::InitAccounts();
+			?>
           <tr>
             <td>Magnolia</td>
             <td>Gaillou</td>

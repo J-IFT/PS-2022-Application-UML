@@ -14,13 +14,13 @@ class Library {
 		if($account->login()){
 			array_push(self::$accounts, $account);
 			$_SESSION['user_id'] = $account->number;
-			// var_dump(self::$accounts);
-			// var_dump(json_encode(self::$accounts));
 		}else{
 			echo '<br>[ERROR] - login error <br>';
 		}
 	}
 
+	//! à défaut d'avoir une classe coter général a tous les user
+	//! ---
 	public static function InitCatalogue(){
 		$catalogue_query = DB::query("
 			SELECT barcode, tag
@@ -31,6 +31,18 @@ class Library {
 			array_push(self::$catalog, $book);
 		}
 	}
+
+	public static function InitAccounts(){
+		$accounts_query = DB::query("
+			SELECT username, password
+			FROM account
+		");
+		while($account = DB::fetch($accounts_query)){
+			$user = new Account($account['username'],$account['password']);
+			array_push(self::$accounts,$user);
+		}
+	}
+	//! ---
 
 	public static function printCatalog(){
 		foreach(self::$catalog as $bookItem){
