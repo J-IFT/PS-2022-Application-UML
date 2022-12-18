@@ -27,6 +27,42 @@ if(isset($_POST['action']) && $_POST['action'] == 'add'
 	$error = 'Paramètres invalides';
 }
 
+//* Modification
+if(isset($_POST['id']) && isset($_POST['action']) && $_POST['action'] == 'update'
+    && isset($_POST['name']) && $_POST['name'] != ''
+    && isset($_POST['subject']) && $_POST['subject'] != ''
+    && isset($_POST['overview']) && $_POST['overview'] != ''
+    && isset($_POST['publisher']) && $_POST['publisher'] != ''
+    && isset($_POST['publicationDate']) && $_POST['publicationDate'] != ''
+    && isset($_POST['lang']) && $_POST['lang'] != ''
+    && isset($_POST['ISBN']) && $_POST['ISBN'] != ''
+    && isset($_POST['author']) && $_POST['author'] != ''
+){
+	$data = [
+		'name' => $_POST['name'],
+		'subject' => $_POST['subject'],
+		'overview' => $_POST['overview'],
+		'publisher' => $_POST['publisher'],
+		'publicationDate' => $_POST['publicationDate'],
+		'lang' => $_POST['lang'],
+		'ISBN' => $_POST['ISBN'],
+		'author' => $_POST['author']
+	];
+	DB::query("
+		UPDATE book
+		SET name = '".DB::str($_POST['name'])."', 
+        subject = '".DB::str($_POST['subject'])."', 
+        overview = '".DB::str($_POST['overview'])."', 
+        publisher = '".DB::str($_POST['publisher'])."',
+        publicationDate = '".DB::str($_POST['publicationDate'])."',
+        lang = '".DB::str($_POST['lang'])."',
+        author = '".DB::str($_POST['author'])."',
+		WHERE number = ".DB::int(isset($_POST['ISBN']))."
+	");
+}elseif(isset($_POST['action']) && $_POST['action'] == 'update'){
+	$error = 'Paramètres invalides';
+}
+
 $name = '';
 $subject = '';
 $overview = '';
