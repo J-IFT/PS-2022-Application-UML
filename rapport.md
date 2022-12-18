@@ -10,6 +10,8 @@ Groupe : Flavien GROS / Juliette INFANTI / Jeremy DUSSOL
   
 ## Installation.
 * Cloner le git dans le dossier "www" de WAMP.
+* Créer une base de donnée "umlapp".
+* Importer le fichier umlapp.sql dans cette base pour créer la base.
 * Lancer l'app par l'adresse "localhost/PS-2002-AppUML" sur un navigateur.  
 
 ## Description des technologies.
