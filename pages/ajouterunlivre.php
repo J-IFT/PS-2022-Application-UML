@@ -1,3 +1,43 @@
+<?php
+//* Création
+if(isset($_POST['action']) && $_POST['action'] == 'add'
+	&& isset($_POST['name']) && $_POST['name'] != ''
+	&& isset($_POST['subject']) && $_POST['subject'] != ''
+	&& isset($_POST['overview']) && $_POST['overview'] != ''
+	&& isset($_POST['publisher']) && $_POST['publisher'] != ''
+	&& isset($_POST['publicationDate']) && $_POST['publicationDate'] != ''
+	&& isset($_POST['lang']) && $_POST['lang'] != ''
+	&& isset($_POST['ISBN']) && $_POST['ISBN'] != ''
+	&& isset($_POST['author']) && $_POST['author'] != ''
+
+){
+	$data = [
+		'name' => $_POST['name'],
+		'subject' => $_POST['subject'],
+		'overview' => $_POST['overview'],
+		'publisher' => $_POST['publisher'],
+		'publicationDate' => $_POST['publicationDate'],
+		'lang' => $_POST['lang'],
+		'ISBN' => $_POST['ISBN'],
+		'author' => $_POST['author']
+	];
+	DB::insert('book',$data);
+	header('Location: index.php?page=gestiondeslivres');
+}elseif(isset($_POST['action']) && $_POST['action'] == 'add'){
+	$error = 'Paramètres invalides';
+}
+
+$name = '';
+$subject = '';
+$overview = '';
+$publisher = '';
+$publicationDate = '';
+$lang = '';
+$ISBN = '';
+$author = '';
+
+
+?>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -32,30 +72,33 @@
 
           <div class="container">
             <label><b>Nom du livre : </b></label>
-            <input type="text" placeholder="Entrez le nom du livre...">
+            <input type="text" value="<?php echo $name ?>" placeholder="Entrez le nom du livre...">
         <br><br>
             <label><b>Auteur : </b></label>
-            <input type="text" placeholder="Entrez le nom de l'auteur...">
+            <input type="text" value="<?php echo $author ?>" placeholder="Entrez le nom de l'auteur...">
         <br><br>
             <label><b>Sujet (Genre) : </b></label>
-            <input type="text" placeholder="Entrez le sujet (autrement dit le genre) du livre...">
+            <input type="text" value="<?php echo $subject ?>" placeholder="Entrez le sujet (autrement dit le genre) du livre...">
         <br><br>
             <label><b>Aperçu (Résumé) : </b></label>
-            <input type="text" placeholder="Entrez l'aperçu (ou un résumé) du livre...">
+            <input type="text" value="<?php echo $overview ?>" placeholder="Entrez l'aperçu (ou un résumé) du livre...">
         <br><br>
             <label><b>Éditeur : </b></label>
-            <input type="text" placeholder="Entrez l'éditeur du livre...">
+            <input type="text" value="<?php echo $publisher ?>" placeholder="Entrez l'éditeur du livre...">
         <br><br>
             <label><b>Date de publication	 : </b></label>
-            <input type="text" placeholder="Entrez la date de publication du livre...">
+            <input type="text" value="<?php echo $publicationDate ?>"  placeholder="Entrez la date de publication du livre...">
         <br><br>
             <label><b>Langue : </b></label>
-            <input type="text" placeholder="Entrez la langue du livre...">
+            <input type="text" value="<?php echo $lang ?>" placeholder="Entrez la langue du livre...">
         <br><br>
             <label><b>ISBN : </b></label>
-            <input type="text" placeholder="Entrez l'ISBN du livre...">
+            <input type="text" value="<?php echo $ISBN ?>" placeholder="Entrez l'ISBN du livre...">
         <br><br>
-            <button type="button" class="btn btn-success"><i class="fa fa-check"></i> Valider</button>
+            <?php
+				echo (isset($error)?$error.'<br>':'');
+			?>
+            <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Valider</button>
             <button type="button" class="btn btn-danger"><i class="fa fa-ban"></i> Annuler</button>
           </div>
         </form>
