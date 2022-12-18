@@ -34,11 +34,12 @@ class Library {
 
 	public static function InitAccounts(){
 		$accounts_query = DB::query("
-			SELECT username, password
+			SELECT mail, password
 			FROM account
 		");
 		while($account = DB::fetch($accounts_query)){
-			$user = new Account($account['username'],$account['password']);
+			$user = new Account($account['mail'],$account['password']);
+			$user->login();
 			array_push(self::$accounts,$user);
 		}
 	}
@@ -48,13 +49,20 @@ class Library {
 		foreach(self::$accounts as $account){
 			echo '
 				<tr>
-					<td>'.$account->username.'</td>
-					<td></td>
-					<td></td>
+					<td>'.$account->firstname.'</td>
+					<td>'.$account->name.'</td>
+					<td>'.$account->mail.'</td>
 					<td>'.$account->pwd.'</td>
 					<td>
-					<button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
-					<button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+						<form action="?page=ajouterunutilisateur" method="post">
+							<input name="id" value="'.$account->number.'" hidden></input>
+							<button type="submit" class="btn btn-success"><i class="fa fa-edit"></i></button>
+						</form>
+						<form action="" method="post">
+							<input name="id" value="'.$account->number.'" hidden></input>
+							<input name="action" value="delete" hidden></input>
+							<button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+						</form>
 					</td>
 				</tr>
 			';
@@ -101,5 +109,16 @@ class Library {
 
 	public static function getAccounts(){
 		return self::$accounts;
+	}
+
+	public static function getAccount($id){
+		foreach(self::$accounts as $account){
+			var_dump($account->number);
+			if($account->number == $id){
+				return $account;
+				break;
+			}
+		}
+		return false;
 	}
 }

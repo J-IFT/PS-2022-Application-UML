@@ -1,4 +1,11 @@
 <?php
+if(isset($_POST['action']) && $_POST['action'] == 'delete' && isset($_POST['id'])){
+	$delete_query = DB::query("
+		DELETE FROM account
+		WHERE number = ".DB::int($_POST['id'])."
+	");
+}
+
 ?>
 <html lang="fr">
 <head>

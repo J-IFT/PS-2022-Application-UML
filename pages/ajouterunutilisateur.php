@@ -1,3 +1,62 @@
+<?php
+//* Création
+if(isset($_POST['action']) && $_POST['action'] == 'add'
+	&& isset($_POST['firstname']) && $_POST['firstname'] != ''
+	&& isset($_POST['name']) && $_POST['name'] != ''
+	&& isset($_POST['mail']) && $_POST['mail'] != ''
+	&& isset($_POST['password']) && $_POST['password'] != ''
+
+){
+	$data = [
+		'name' => $_POST['name'],
+		'firstname' => $_POST['firstname'],
+		'mail' => $_POST['mail'],
+		'password' => $_POST['password']
+	];
+	DB::insert('account',$data);
+	header('Location: index.php?page=gestiondesutilisateurs');
+}elseif(isset($_POST['action']) && $_POST['action'] == 'add'){
+	$error = 'Paramètres invalides';
+}
+
+//* Modification
+if(isset($_POST['id']) && isset($_POST['action']) && $_POST['action'] == 'update'
+	&& isset($_POST['firstname']) && $_POST['firstname'] != ''
+	&& isset($_POST['name']) && $_POST['name'] != ''
+	&& isset($_POST['mail']) && $_POST['mail'] != ''
+	&& isset($_POST['password']) && $_POST['password'] != ''
+){
+	$data = [
+		'name' => $_POST['name'],
+		'firstname' => $_POST['firstname'],
+		'mail' => $_POST['mail'],
+		'password' => $_POST['password']
+	];
+	DB::query("
+		UPDATE account
+		SET firstname = '".DB::str($_POST['firstname'])."', name = '".DB::str($_POST['name'])."', mail = '".DB::str($_POST['mail'])."', password = '".DB::str($_POST['password'])."'
+		WHERE number = ".DB::int(isset($_POST['id']))."
+	");
+}elseif(isset($_POST['action']) && $_POST['action'] == 'update'){
+	$error = 'Paramètres invalides';
+}
+
+
+$name = '';
+$firstname = '';
+$mail = '';
+$password = '';
+if(isset($_POST['id'])){
+	Library::InitAccounts();
+	$account = Library::getAccount($_POST['id']);
+	$name 		= $account->name;
+	$firstname  = $account->firstname;
+	$mail 		= $account->mail;
+	$password  	= $account->pwd;
+}
+
+
+?>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -29,25 +88,36 @@
         <br><br>
 
         <form action="" method="post">
-
+			<?php 
+				if(isset($_POST['id'])){
+					echo '<input name="id" value="'.$_POST['id'].'" hidden>';
+				}
+			?>
+			<input name="action" value="<?php echo (isset($_POST['id'])?'update':'add');?>" hidden>
           <div class="container">
             <label><b>Prénom : </b></label>
-            <input type="text" placeholder="Entrez le prénom de l'utilisateur...">
+            <input name="firstname" type="text" value="<?php echo $firstname ?>" placeholder="Entrez le prénom de l'utilisateur...">
         <br><br>
             <label><b>Nom : </b></label>
-            <input type="text" placeholder="Entrez le nom de l'utilisateur...">
+            <input name="name" type="text" value="<?php echo $name ?>" placeholder="Entrez le nom de l'utilisateur...">
         <br><br>
             <label><b>Adresse mail : </b></label>
-            <input type="text" placeholder="Entrez l'adresse mail de l'utilisateur...">
+            <input name="mail" type="text" value="<?php echo $mail ?>" placeholder="Entrez l'adresse mail de l'utilisateur...">
         <br><br>
             <label><b>Mot de passe : </b></label>
-            <input type="text" placeholder="Entrez le mot de passe de l'utilisateur...">
+            <input name="password" type="text" value="<?php echo $password ?>" placeholder="Entrez le mot de passe de l'utilisateur...">
         <br><br>
-            <button type="button" class="btn btn-success"><i class="fa fa-check"></i> Valider</button>
-            <button type="button" class="btn btn-danger"><i class="fa fa-ban"></i> Annuler</button>
+			<?php
+				echo (isset($error)?$error.'<br>':'');
+			?>
+            <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Valider</button>
           </div>
         </form>
-
+		<div class="container">
+			<form action="index.php?page=gestiondesutilisateurs">
+				<button type="submit" class="btn btn-danger"><i class="fa fa-ban"></i> Annuler</button>
+			</form>
+		</div>
         <br><br><br>
 
 <footer>

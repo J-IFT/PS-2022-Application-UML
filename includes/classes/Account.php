@@ -1,30 +1,34 @@
 <?php
 
 class Account{
-	public $username;
+	public $name;
+	public $firstname;
 	public $pwd;
 	public $number;
 	public $history;
 	public $opened;
 	public $state;
+	public $mail;
 
-	function __construct($username,$pwd){
-		$this->username = $username;
+	function __construct($mail,$pwd){
+		$this->mail = $mail;
 		$this->pwd		= $pwd;
 	}
 
 	function login(){
 		$account_query = DB::query("
-			SELECT number, history, opened, state
+			SELECT name, firstname, number, history, opened, state
 			FROM account 
-			WHERE username = '".DB::str($this->username)."'
+			WHERE mail = '".DB::str($this->mail)."'
 				AND password = '".DB::str($this->pwd)."'
 		");
 		if($account = DB::fetch($account_query)){
-			$this->number  = $account['number'];
-			$this->history = $account['history'];
-			$this->opened  = $account['opened'];
-			$this->state   = $account['state'];
+			$this->firstname = $account['firstname'];
+			$this->name 	 = $account['name'];
+			$this->number    = $account['number'];
+			$this->history   = $account['history'];
+			$this->opened    = $account['opened'];
+			$this->state     = $account['state'];
 			return true;
 		}
 		return false;
